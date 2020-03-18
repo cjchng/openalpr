@@ -7,11 +7,14 @@ Check out a live online demo here: http://www.openalpr.com/demo-image.html
 
 User Guide
 -----------
-
+123456789
 
 OpenALPR includes a command line utility.  Simply typing "alpr [image file path]" is enough to get started recognizing license plate images.
+OpenALPR包含<命令行實用程序>。 只需鍵入“ alpr [圖像文件路徑]” 就足以開始識別車牌圖像。
 
 For example, the following output is created by analyzing this image:
+例如，通過分析此圖像可創建以下輸出：
+
 ![Plate Image](http://www.openalpr.com/images/demoscreenshots/plate3.png "Input image")
 
 
