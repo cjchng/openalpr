@@ -1,7 +1,12 @@
 # openalpr
 資源版本:
 
-ubuntu18.04 ; opencv3.3.0；log4cplus2.0；tesseract 4.00.00；leptonica-1.74.4；openalpr2.3。
+ubuntu18.04 ; 
+[opencv3.3.0](https://github.com/opencv/opencv/archive/3.3.0.zip)；
+[log4cplus2.0](https://sourceforge.net/projects/log4cplus/files/log4cplus-stable/2.0.0/log4cplus-2.0.0.zip/download)；
+[tesseract 4.00.00](https://github.com/tesseract-ocr/tesseract/releases)；
+[leptonica-1.74.4](https://github.com/DanBloomberg/leptonica/releases)；
+[openalpr2.3](https://github.com/openalpr/openalpr/releases)。
 
 編譯opencv
 ---
@@ -19,7 +24,7 @@ ubuntu18.04 ; opencv3.3.0；log4cplus2.0；tesseract 4.00.00；leptonica-1.74.4�
   ```
  3.Build and install OpenCV
   ```
-  cd opencv
+  cd /opt/opencv
   sudo mkdir release
   cd release
   cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
