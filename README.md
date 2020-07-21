@@ -13,8 +13,8 @@ ubuntu18.04 ;
  1.Updating Ubuntu
 
   ```
-  sudo apt-get updatesudo
-  apt-get upgrade
+  sudo apt-get update
+  sudo apt-get upgrade
   ```
  2.Install dependencies
   ```
