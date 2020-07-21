@@ -3,6 +3,7 @@
 
 ubuntu18.04 ; 
 [opencv3.3.0](https://github.com/opencv/opencv/archive/3.3.0.zip)；
+[opencv_contrib 3.3.0](https://github.com/opencv/opencv_contrib/releases?after=3.4.3);
 [log4cplus2.0](https://sourceforge.net/projects/log4cplus/files/log4cplus-stable/2.0.0/log4cplus-2.0.0.zip/download)；
 [tesseract 4.00.00](https://github.com/tesseract-ocr/tesseract/releases)；
 [leptonica-1.74.4](https://github.com/DanBloomberg/leptonica/releases)；
