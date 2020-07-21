@@ -9,64 +9,89 @@ ubuntu18.04 ;
 [leptonica-1.74.4](https://github.com/DanBloomberg/leptonica/releases)；
 [openalpr2.3](https://github.com/openalpr/openalpr/releases)。
 
+Updating Ubuntu 
+---
+```
+  sudo apt-get update 
+  sudo apt-get upgrade
+``` 
+
+安裝依賴庫
+---
+  ```
+  sudo apt-get install build-essential
+  sudo apt-get install cmake
+  sudo apt-get install git
+  sudo apt-get install g++ # or clang++
+  sudo apt-get install autoconf automake libtool
+  sudo apt-get install autoconf-archive
+  sudo apt-get install pkg-config
+  sudo apt-get install libpng-dev
+  sudo apt-get install libjpeg8-dev
+  sudo apt-get install libtiff5-dev
+  sudo apt-get install zlib1g-dev
+  sudo apt-get install libicu-dev
+  sudo apt-get install libgtk2.0-dev
+  sudo apt-get install libpango1.0-dev
+  sudo apt-get install libcairo2-dev
+  sudo apt-get install libavformat-dev
+  sudo apt-get install libavcodec-dev
+  sudo apt-get install libswscale-dev
+  sudo apt-get install libjpeg-dev
+  sudo apt-get install libdc1394-22-dev
+  sudo apt-get install libeigen3-dev
+  sudo apt-get install libtheora-dev
+  sudo apt-get install libvorbis-dev
+  sudo apt-get install libxvidcore-dev
+  sudo apt-get install libx264-dev
+  sudo apt-get install sphinx-common
+  sudo apt-get install libtbb-dev
+  sudo apt-get install yasm
+  sudo apt-get install libfaac-dev
+  sudo apt-get install libopencore-amrnb-dev
+  sudo apt-get install libgstreamer-plugins-base1.0-dev
+  sudo apt-get install libavutil-dev
+  sudo apt-get install libavfilter-dev
+  sudo apt-get install libavresample-dev
+  ```
+  - install libjasper
+  ```
+  sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+  sudo apt install libjasper1 libjasper-dev
+  ```
+  - python 
+  ```
+  sudo apt-get install python3.6-dev
+  sudo apt-get install python3-numpy
+  sudo apt-get install libtbb2
+  sudo apt-get install libtbb-dev
+  ```
+
 編譯opencv
 ---
- 1.Updating Ubuntu
-
-  ```
-  sudo apt-get update
-  sudo apt-get upgrade
-  ```
- 2.Install dependencies
-  ```
-  sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-  sudo apt-get install python3.6-dev python3-numpy libtbb2 libtbb-dev
-  sudo apt-get install libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev  
-  ```
- 3.Build and install OpenCV
   ```
   cd /opt/opencv
   sudo mkdir release
   cd release
-  cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
+  sudo cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
   sudo make -j4
   sudo make install
   sudo ldconfig
   ```
- 4.Check OpenCV version
-  ```
-  pkg-config --modversion opencv
-  ```
-
 編譯log4cplus
 ---
 ```
 cd /opt/log4cplus
-./configure CXXFLAGS="-std=c++0x"
+sudo sudo apt update./configure CXXFLAGS="-std=c++0x"
 sudo make
 sudo make install
 ```
 
-安裝依賴庫
----
-```
-sudo apt-get install g++ # or clang++
-sudo apt-get install autoconf automake libtool
-sudo apt-get install autoconf-archive
-sudo apt-get install pkg-config
-sudo apt-get install libpng-dev
-sudo apt-get install libjpeg8-dev
-sudo apt-get install libtiff5-dev
-sudo apt-get install zlib1g-dev
-sudo apt-get install libicu-dev
-sudo apt-get install libpango1.0-dev
-sudo apt-get install libcairo2-dev
-```  
 編譯leptonica
 ---
 ```
 cd /opt/leptonica
-./configure --prefix=/usr/local
+sudo ./configure --prefix=/usr/local
 sudo make
 sudo make install
 ```
@@ -96,3 +121,9 @@ sudo gedit ./CMakeFiles/alprd.dir/build.make &
 sudo make 
 sudo make install
 ```
+
+Check OpenCV version
+---
+  ```
+  pkg-config --modversion opencv
+  ```
