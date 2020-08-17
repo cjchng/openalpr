@@ -84,7 +84,8 @@ Updating Ubuntu
 ---
 ```
 cd /opt/log4cplus
-sudo sudo apt update./configure CXXFLAGS="-std=c++0x"
+sudo apt-get update
+sudo ./configure CXXFLAGS="-std=c++0x"
 sudo make
 sudo make install
 ```
