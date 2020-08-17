@@ -26,6 +26,7 @@ Updating Ubuntu
   sudo apt-get install autoconf automake libtool
   sudo apt-get install autoconf-archive
   sudo apt-get install pkg-config
+  sudo apt-get install python-dev python3-dev
   sudo apt-get install libpng-dev
   sudo apt-get install libjpeg8-dev
   sudo apt-get install libtiff5-dev
@@ -57,6 +58,7 @@ Updating Ubuntu
   - install libjasper
   ```
   sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+  sudo apt-get update
   sudo apt install libjasper1 libjasper-dev
   ```
   - python 
@@ -73,7 +75,7 @@ Updating Ubuntu
   cd /opt/opencv
   sudo mkdir release
   cd release
-  sudo cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
+  sudo cmake -D CMAKE_BUILD_TYPE=RELEASE \ -D INSTALL_C_EXAMPLES=OFF \ INSTALL_PYTHON_EXAMPLES=ON \ -D BUILD_EXAMPLES=OFF \ -DENABLE_CXX11=ON \ -D BUILD_opencv_python3=ON \ -D BUILD_opencv_python2=ON \ -D BUILD_opencv_java=OFF \ -D PYTHON3_EXECUTABLE=$(which python3)\ -D PYTHON3_INCLUDE_DIR=/usr/include/python3.5m \ -D PYTHON3_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so.1 \ -D PYTHON3_NUMPY_PATH=/usr/local/lib/python3.5/dist-packages \ -D PYTHON2_EXECUTABLE=$(which python2)\ -D PYTHON2_INCLUDE_DIR=/usr/include/python2.7 \ -D PYTHON2_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython2.7.so.1 \ -D PYTHON2_NUMPY_PATH=/usr/local/lib/python2.7/dist-packages -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules ..
   sudo make -j4
   sudo make install
   sudo ldconfig
@@ -100,9 +102,9 @@ sudo make install
 ```
 cd /opt/tesseract
 sudo gedit ./ccutil/unichar.h &
-    using std::string;
-./autogen.sh
-./configure
+     using std::string;
+sudo ./autogen.sh
+sudo ./configure
 sudo make
 sudo make install 
 sudo ldconfig
@@ -112,12 +114,12 @@ sudo ldconfig
 ```
 cd /opt/openalpr/src
 sudo gedit CMakeLists.txt &
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
-    SET(OpenCV_DIR "/usr/local/lib")
-    SET(Tesseract_DIR "/usr/local/src/tesseract-ocr")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+     SET(OpenCV_DIR "/usr/local/lib")
+     SET(Tesseract_DIR "/usr/local/src/tesseract-ocr")
 sudo cmake ./
 sudo gedit ./CMakeFiles/alprd.dir/build.make &
-    alprd: /usr/local/lib/liblog4cplus.so
+     alprd: /usr/local/lib/liblog4cplus.so
 sudo make 
 sudo make install
 ```
@@ -127,3 +129,18 @@ Check OpenCV version
   ```
   pkg-config --modversion opencv
   ```
+Check alpr version
+---
+  ```
+  alpr --version
+  ```
+Check alpr version
+---
+  ```
+  tesseract --version
+  ```
+openalpr_tagger
+---
+```
+
+```
