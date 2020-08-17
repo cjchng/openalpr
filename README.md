@@ -135,7 +135,7 @@ Check alpr version
   ```
   alpr --version
   ```
-Check alpr version
+Check tesseract version
 ---
   ```
   tesseract --version
