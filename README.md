@@ -140,8 +140,3 @@ Check tesseract version
   ```
   tesseract --version
   ```
-openalpr_tagger
----
-```
-
-```
